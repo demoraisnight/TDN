@@ -25,7 +25,7 @@ Este é um sistema de compra de ingressos para um cinema, desenvolvido para aten
 
 ## Modelo Conceitual
 
-![Conceptual Model](cinemaProject.png)
+![Conceptual Model](Spring/cinema/cinemaProject.png)
 
 ## Instalação
 
@@ -39,7 +39,7 @@ Este é um sistema de compra de ingressos para um cinema, desenvolvido para aten
         ```bash
         sudo docker run -p 5432:5432 --name meu-container-pg12 -e POSTGRES_PASSWORD=1234567 -e POSTGRES_DB=minha_base_2 postgres:12-alpine
     - Download and Install [pgAdmin4](https://www.pgadmin.org/download/pgadmin-4-apt/)
-    - Run [ddl.sql](ddl.sql) on your database using pgAdmin.
+    - Run [ddl.sql](Spring/cinema/ddl.sql) on your database using pgAdmin.
 3. Run the project:
     1. Run via Command Line
     ```bash
@@ -47,9 +47,9 @@ Este é um sistema de compra de ingressos para um cinema, desenvolvido para aten
       java -jar target/cinema-0.0.1-SNAPSHOT.jar
     ```
     2. Running using and IDE
-    - [SchoolApplication](/src/main/java/com/vinicius/cinema/CinemaApplication.java)
+    - [SchoolApplication](Spring/cinema/src/main/java/com/vinicius/cinema/CinemaApplication.java)
 ## Usage
-- Baixe a coleção do postman [Cinema.postman](Cinema.postman_collection.json)
+- Baixe a coleção do postman [Cinema.postman](Spring/cinema/Cinema.postman_collection.json)
 - Execute o projeto
 - Crie um usuário ou faça login com os já registrados na aba Cadrastro e Login/Logout
 - Se entrou como cliente os endpoints se encontram na aba Cliente, caso contrário na aba Funcionário.
