@@ -1,0 +1,57 @@
+package ex7;
+
+public class CifraDeVigenere {
+	
+	public static String encrypt(String message, String key) {
+        StringBuilder encryptedMessage = new StringBuilder();
+        message = message.toLowerCase();
+        key = key.toLowerCase();
+
+        int keyIndex = 0;
+        for (char letter : message.toCharArray()) {
+            if (Character.isLetter(letter)) {
+                int shift = key.charAt(keyIndex) - 'a';
+                char encryptedLetter = (char) ('a' + (letter - 'a' + shift) % 26);
+                encryptedMessage.append(encryptedLetter);
+                keyIndex = (keyIndex + 1) % key.length();
+            } else {
+                encryptedMessage.append(letter);
+            }
+        }
+
+        return encryptedMessage.toString();
+    }
+
+    public static String decrypt(String encryptedMessage, String key) {
+        StringBuilder decryptedMessage = new StringBuilder();
+        encryptedMessage = encryptedMessage.toLowerCase();
+        key = key.toLowerCase();
+
+        int keyIndex = 0;
+        for (char letter : encryptedMessage.toCharArray()) {
+            if (Character.isLetter(letter)) {
+                int shift = key.charAt(keyIndex) - 'a';
+                char decryptedLetter = (char) ('a' + (letter - 'a' - shift + 26) % 26);
+                decryptedMessage.append(decryptedLetter);
+                keyIndex = (keyIndex + 1) % key.length();
+            } else {
+                decryptedMessage.append(letter);
+            }
+        }
+
+        return decryptedMessage.toString();
+    }
+
+    public static void main(String[] args) {
+        String message = "Hello, world!";
+        String key = "key";
+
+        String encryptedMessage = encrypt(message, key);
+        String decryptedMessage = decrypt(encryptedMessage, key);
+
+        System.out.println("Original Message: " + message);
+        System.out.println("Encrypted Message: " + encryptedMessage);
+        System.out.println("Decrypted Message: " + decryptedMessage);
+    }
+
+}

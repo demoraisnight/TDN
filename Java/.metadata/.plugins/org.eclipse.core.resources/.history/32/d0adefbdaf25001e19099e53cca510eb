@@ -1,0 +1,23 @@
+package ex3;
+
+public class Palindromo {
+	
+
+	public static void main(String[] args) {
+		
+		String palavra_1 = "Rosa"; 
+		String palavra_2 = "Luz Azul"; 
+	
+
+        System.out.println(palavra_1 + " é um palidromo: " + isPalindromo(palavra_1));
+        System.out.println(palavra_2 + " é um palidromo: " + isPalindromo(palavra_2));
+	}
+	
+	
+	//Método que retorna se uma String é um palíndromo
+	public static boolean isPalindromo(String texto) {
+	    String reverse = new StringBuilder(texto).reverse().toString().replace(" ", "");
+	    return texto.equalsIgnoreCase(reverse);
+	}
+
+}

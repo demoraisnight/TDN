@@ -1,0 +1,27 @@
+package ex5;
+
+import java.util.TreeMap;
+
+public class Troco {
+	
+	
+
+	public static void main(String[] args) {
+		
+	TreeMap<String, Integer> treeMap = new TreeMap<>();
+
+    // Inserindo elementos no TreeMap
+    treeMap.put("um", 1);
+    treeMap.put("dois", 2);
+    treeMap.put("três", 3);
+    treeMap.put("quatro", 4);
+    treeMap.put("cinco", 5);
+    
+    for (String chave : treeMap.keySet()) {
+        int valor = treeMap.get(chave);
+        System.out.println("Chave: " + chave + ", Valor: " + valor);
+    }
+    
+    
+	}
+}

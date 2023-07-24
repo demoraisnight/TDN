@@ -1,0 +1,54 @@
+package ex7;
+
+public class CifraDeVigenere {
+	
+	  public static String encrypt(String message, String key) {
+	        StringBuilder encryptedMessage = new StringBuilder();
+
+	        int keyIndex = 0;
+	        for (char letter : message.toCharArray()) {
+	            if (Character.isLetter(letter)) {
+	                char base = Character.isUpperCase(letter) ? 'A' : 'a';
+	                int shift = key.toLowerCase().charAt(keyIndex) - 'a';
+	                char encryptedLetter = (char) (base + (letter - base + shift) % 26);
+	                encryptedMessage.append(encryptedLetter);
+	                keyIndex = (keyIndex + 1) % key.length();
+	            } else {
+	                encryptedMessage.append(letter);
+	            }
+	        }
+
+	        return encryptedMessage.toString();
+	    }
+
+	    public static String decrypt(String encryptedMessage, String key) {
+	        StringBuilder decryptedMessage = new StringBuilder();
+
+	        int keyIndex = 0;
+	        for (char letter : encryptedMessage.toCharArray()) {
+	            if (Character.isLetter(letter)) {
+	                char base = Character.isUpperCase(letter) ? 'A' : 'a';
+	                int shift = key.toLowerCase().charAt(keyIndex) - 'a';
+	                char decryptedLetter = (char) (base + (letter - base - shift + 26) % 26);
+	                decryptedMessage.append(decryptedLetter);
+	                keyIndex = (keyIndex + 1) % key.length();
+	            } else {
+	                decryptedMessage.append(letter);
+	            }
+	        }
+
+	        return decryptedMessage.toString();
+	    }
+
+	    public static void main(String[] args) {
+	        String message = "ATACARBASESUL";
+	        String key = "limao";
+
+	        String encryptedMessage = encrypt(message, key);
+	        String decryptedMessage = decrypt(encryptedMessage, key);
+
+	        System.out.println("Original Message: " + message);
+	        System.out.println("Encrypted Message: " + encryptedMessage);
+	        System.out.println("Decrypted Message: " + decryptedMessage);
+	    }
+}

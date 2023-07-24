@@ -1,0 +1,4 @@
+Pedro;Aprovado
+Julia;Reprovado
+Marcos;Reprovado
+Ana;Recuperação

@@ -1,0 +1,34 @@
+package ex2;
+
+public class Primos {
+
+    public static void main(String[] args) {
+        int upperLimit = 1000;
+
+        System.out.println("Prime numbers between 0 and " + upperLimit + " (using brute force):");
+        for (int i = 2; i <= upperLimit; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+    
+    
+    
+    // Função que retorna se um número é primo
+	public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+	
+}

@@ -1,0 +1,55 @@
+package ex8;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class NotasDaTurma {
+	
+	public static void main(String[] args) {
+		
+	analisarNotas();
+	
+
+	}
+	
+	
+	
+	public static void analisarNotas() {
+	    try {
+	        FileWriter writer = new FileWriter("resultado.txt");
+	        Scanner scanner = new Scanner(new File("notas.txt"));
+
+	        while (scanner.hasNextLine()) {
+	            String linha = scanner.nextLine();
+	            String[] dados = linha.split(";");
+
+	            String nome = dados[0];
+	            int presenca = Integer.parseInt(dados[1]);
+	            double nota1 = Double.parseDouble(dados[2]);
+	            double nota2 = Double.parseDouble(dados[3]);
+	            double nota3 = Double.parseDouble(dados[4]);
+
+	            double media = (nota1 + nota2 + nota3) / 3.0;
+
+	            String status;
+
+	            if (presenca >= 70 && media >= 7.0) {
+	                status = "Aprovado";
+	            } else if (presenca >= 70 && media >= 4.0) {
+	                status = "Recuperação";
+	            } else {
+	                status = "Reprovado";
+	            }
+
+	            writer.write(nome + ";" + status + "\n");
+	        }
+
+	        writer.close();
+	        scanner.close();
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	}
+
+}

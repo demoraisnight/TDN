@@ -1,0 +1,26 @@
+package ex1;
+
+public class Fatorial {
+	
+
+	public static void main(String[] args) {
+		
+		 int num = 5;
+		
+
+        int iterativeResult = factorialIterative(num);
+
+        System.out.println("Factorial of " + num + " (using iteration): " + iterativeResult);
+		
+	}
+	
+	  // Iterative implementation of factorial
+    public static int factorialIterative(int n) {
+        int result = 1;
+        for (int i = 1; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+
+}

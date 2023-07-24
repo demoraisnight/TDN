@@ -1,0 +1,29 @@
+package ex8;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class NotasDaTurma {
+	
+	public static void main(String[] args) {
+        String fileName = "example.txt";
+
+        try {
+            // Open the file using a BufferedReader
+            BufferedReader br = new BufferedReader(new FileReader(fileName));
+
+            // Read the file line by line
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            // Close the BufferedReader
+            br.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+}

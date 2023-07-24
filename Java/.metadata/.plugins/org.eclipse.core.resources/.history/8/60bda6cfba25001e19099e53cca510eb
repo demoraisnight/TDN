@@ -1,0 +1,37 @@
+package ex5;
+
+import java.math.BigDecimal;
+import java.util.HashMap;
+
+public class Troco {
+	
+	
+
+	public static void main(String[] args) {
+		
+	HashMap<String, BigDecimal> map = new HashMap<>();
+
+	
+	map.put("moeda de 1", 0.01);
+	map.put("moeda de 5", 0.05);
+	map.put("moeda de 10", 0.1);
+	map.put("moeda de 20", 0.2);
+	map.put("moeda de 50", 0.5);
+
+    map.put("nota de 1", 1.0);
+    map.put("nota de 2", 2.0);
+    map.put("nota de 5", 5.0);
+    map.put("nota de 10", 10.0);
+    map.put("nota de 20", 20.0);
+    map.put("nota de 50", 50.0);
+    map.put("nota de 100", 100.0);
+  
+    
+    for (String chave : map.keySet()) {
+    	BigDecimal valor = map.get(chave);
+        System.out.println("Chave: " + chave + ", Valor: " + valor);
+    }
+    
+    
+	}
+}

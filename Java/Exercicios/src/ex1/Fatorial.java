@@ -1,0 +1,26 @@
+package ex1;
+
+public class Fatorial {
+	
+
+	public static void main(String[] args) {
+		
+		int num = 10; // Substitua o número para achar seu fatorial
+	
+
+        int resultado = factorial(num);
+        System.out.println("O fatorial de " + num + " é " + resultado);
+		
+	}
+	
+	
+	//Função que retorna o fatorial de um determinado número
+    public static int factorial(int n) {
+        int resultado = 1;
+        for (int i = 1; i <= n; i++) {
+            resultado *= i;
+        }
+        return resultado;
+    }
+
+}

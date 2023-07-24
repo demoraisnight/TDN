@@ -1,0 +1,37 @@
+package ex6;
+
+public class CifraCesar {
+	public static String cifrar(String texto, int chave) {
+		
+        StringBuilder textoCriptografado = new StringBuilder();
+
+        for (char letra : texto.toCharArray()) {
+            if (Character.isLetter(letra)) {
+                char base = Character.isUpperCase(letra) ? 'A' : 'a';
+                char letraCriptografada = (char) ((letra - base + chave) % 26 + base);
+                textoCriptografado.append(letraCriptografada);
+            } else {
+                textoCriptografado.append(letra);
+            }
+        }
+
+        return textoCriptografado.toString();
+    }
+
+    public static String decifrar(String texto, int chave) {
+        return cifrar(texto, 26 - chave); // Deslocamento de 26 - chave é equivalente à decifragem
+    }
+
+    public static void main(String[] args) {
+        String mensagem = "Hello, world!";
+        int chave = 3;
+
+        String mensagemCriptografada = cifrar(mensagem, chave);
+        String mensagemDescriptografada = decifrar(mensagemCriptografada, chave);
+
+        System.out.println("Mensagem original: " + mensagem);
+        System.out.println("Mensagem criptografada: " + mensagemCriptografada);
+        System.out.println("Mensagem descriptografada: " + mensagemDescriptografada);
+    }
+
+}

@@ -1,0 +1,4 @@
+INDEX VERSION 1.131+/home/vini/Desktop/testeDeNivelamento/Java/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+2949097923.index
+4048133997.index
